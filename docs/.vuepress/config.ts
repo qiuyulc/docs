@@ -5,7 +5,10 @@ export default defineUserConfig({
   lang: "zh-CN",
   title: "前端学习记录",
   description: "前端学习复习路线图",
+
   theme: defaultTheme({
+    lastUpdatedText: "最后更新",
+    contributorsText: "贡献者",
     // 默认主题配置
     home: "/",
     notFound: ["峰回路转多歧路,你走丢了哦！"],
@@ -15,7 +18,7 @@ export default defineUserConfig({
         text: "前端基础",
         children: [
           {
-            text: "html",
+            text: "HTML",
             link: "/html/introduction",
           },
         ],
@@ -26,7 +29,11 @@ export default defineUserConfig({
         {
           text: "基础",
           collapsible: true,
-          children: ["/html/introduction", "/html/base-elements"],
+          children: [
+            "/html/introduction", //简介
+            "/html/base-elements", //基础元素
+            "/html/interview", //面试题
+          ],
         },
       ],
       // "/html/introduction", "/html/base-elements"
