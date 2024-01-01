@@ -1,0 +1,8 @@
+echo 'node_modules' >> .gitignore
+echo '.temp' >> .gitignore
+echo '.cache' >> .gitignore
+
+# 忽略的文件
+node_modules/
+.temp
+.cache
