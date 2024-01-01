@@ -1,7 +1,7 @@
 import { defineUserConfig, defaultTheme } from "vuepress";
 
 export default defineUserConfig({
-  base: "/",
+  base: "/blog/",
   lang: "zh-CN",
   title: "前端学习记录",
   description: "前端学习复习路线图",
