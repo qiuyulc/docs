@@ -1,0 +1,19 @@
+:root {
+  --homepage-width: 1170px;
+  //搜索框样式
+  --search-bg-color: #ffffff;
+  --search-accent-color: #3eaf7c;
+  --search-text-color: #2c3e50;
+  --search-border-color: #eaecef;
+
+  --search-item-text-color: #5d81a5;
+  --search-item-focus-bg-color: #f3f4f5;
+
+  --search-input-width: 12rem;
+  --search-result-width: 20rem;
+}
+.sidebar-item:not(.sidebar-heading) {
+  white-space: nowrap; /* 防止文本换行 */
+  overflow: hidden; /* 隐藏超出容器的部分 */
+  text-overflow: ellipsis; /* 在超出部分显示省略号 */
+}

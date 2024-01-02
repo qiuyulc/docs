@@ -1,10 +1,10 @@
 import { defineUserConfig, defaultTheme } from "vuepress";
-
+import { searchPlugin } from "@vuepress/plugin-search";
 export default defineUserConfig({
   base: "/blog/",
   lang: "zh-CN",
-  title: "前端学习记录",
-  description: "前端学习复习路线图",
+  title: "秋雨",
+  description: "我与旧事归于尽，今年依旧花盛开。",
 
   theme: defaultTheme({
     lastUpdatedText: "最后更新",
@@ -23,6 +23,15 @@ export default defineUserConfig({
           },
         ],
       },
+      {
+        text: "面试题",
+        children: [
+          {
+            text: "前端常识",
+            link: "/interview/basics",
+          },
+        ],
+      },
     ],
     sidebar: {
       "/html/": [
@@ -32,9 +41,16 @@ export default defineUserConfig({
           children: [
             "/html/introduction", //简介
             "/html/base-elements", //基础元素
-            "/html/interview", //面试题
           ],
         },
+      ],
+      "/interview/": [
+        // {
+        //   text: "面试题",
+        //   collapsible: true,
+        //   children: [""],
+        // },
+        "/interview/basics",
       ],
       // "/html/introduction", "/html/base-elements"
       //   {
@@ -53,4 +69,13 @@ export default defineUserConfig({
       //     },
     },
   }),
+  plugins: [
+    searchPlugin({
+      locales: {
+        "/": {
+          placeholder: "搜索",
+        },
+      },
+    }),
+  ],
 });

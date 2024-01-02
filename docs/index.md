@@ -1,14 +1,14 @@
 ---
 home: true
-heroText: 复习中...
-heroImage: https://vuejs.org/images/logo.png
-actions:
-  - text: 快速开始
-    link: /HTML
-    type: primary
-  - text: 项目简介
-    link: /Introduction
-    type: secondary
+heroText:
+heroImage: /images/banner.png
+# actions:
+#   - text: 快速开始
+#     link: /HTML
+#     type: primary
+#   - text: 项目简介
+#     link: /Introduction
+#     type: secondary
 
 features:
   - title: HTML
