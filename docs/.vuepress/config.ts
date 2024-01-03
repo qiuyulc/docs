@@ -14,15 +14,15 @@ export default defineUserConfig({
     notFound: ["峰回路转多歧路,你走丢了哦！"],
     backToHome: "返回首页",
     navbar: [
-      {
-        text: "前端基础",
-        children: [
-          {
-            text: "HTML",
-            link: "/html/introduction",
-          },
-        ],
-      },
+      // {
+      //   text: "前端基础",
+      //   children: [
+      //     {
+      //       text: "HTML",
+      //       link: "/html/introduction",
+      //     },
+      //   ],
+      // },
       {
         text: "面试题",
         children: [
