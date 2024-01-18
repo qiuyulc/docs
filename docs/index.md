@@ -13,6 +13,10 @@ heroImage: /images/banner.png
 features:
   - title: HTML
     details: Hypertext Markup Language,创建和组织网页内容的标记语言。
+  - title: CSS
+    details: CSS（Cascading Style Sheets）是一种用于描述网页样式和布局的标记语言。
+  - title: JavaScript
+    details: JavaScript是一种广泛用于网页开发和构建交互式应用程序的脚本语言。
 footer: 前端复习文档，欢迎交流。
 ---
 
