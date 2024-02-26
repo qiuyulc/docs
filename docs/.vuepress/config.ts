@@ -30,6 +30,10 @@ export default defineUserConfig({
             text: "前端常识",
             link: "/interview/basics",
           },
+          {
+            text: "React",
+            link: "/react/basics",
+          },
         ],
       },
     ],
@@ -52,6 +56,7 @@ export default defineUserConfig({
         // },
         "/interview/basics",
       ],
+      "/react/": ["/react/basics"],
       // "/html/introduction", "/html/base-elements"
       //   {
       //         text: "HTML",
