@@ -21,6 +21,10 @@ export default defineUserConfig({
             text: "HTML",
             link: "/html/introduction",
           },
+          {
+            text: "TypeScript",
+            link: "/typescript/1_简介",
+          },
         ],
       },
       {
@@ -28,11 +32,11 @@ export default defineUserConfig({
         children: [
           {
             text: "前端常识",
-            link: "/interview/basics",
+            link: "/interview/web/basics",
           },
           {
             text: "React",
-            link: "/react/basics",
+            link: "/interview/react_interview/basics",
           },
         ],
       },
@@ -48,15 +52,27 @@ export default defineUserConfig({
           ],
         },
       ],
+      "/typescript/": [
+        {
+          text: "TypeScript",
+          collapsible: true,
+          children: [
+            "/typescript/1_简介",
+            "/typescript/2_基本用法",
+            "/typescript/3_any",
+            "/typescript/4_类型系统",
+          ],
+        },
+      ],
       "/interview/": [
         // {
         //   text: "面试题",
         //   collapsible: true,
         //   children: [""],
         // },
-        "/interview/basics",
+        "/interview/web/basics",
+        "/interview/react_interview/basics",
       ],
-      "/react/": ["/react/basics"],
       // "/html/introduction", "/html/base-elements"
       //   {
       //         text: "HTML",
