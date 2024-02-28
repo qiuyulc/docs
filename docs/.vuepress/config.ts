@@ -23,7 +23,7 @@ export default defineUserConfig({
           },
           {
             text: "TypeScript",
-            link: "/typescript/1_简介",
+            link: "/typescript/1_introduction",
           },
         ],
       },
@@ -57,10 +57,10 @@ export default defineUserConfig({
           text: "TypeScript",
           collapsible: true,
           children: [
-            "/typescript/1_简介",
-            "/typescript/2_基本用法",
+            "/typescript/1_introduction",
+            "/typescript/2_basic_usage",
             "/typescript/3_any",
-            "/typescript/4_类型系统",
+            "/typescript/4_type_system",
           ],
         },
       ],
