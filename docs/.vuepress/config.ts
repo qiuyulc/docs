@@ -17,10 +17,10 @@ export default defineUserConfig({
       {
         text: "前端基础",
         children: [
-          {
-            text: "HTML",
-            link: "/html/introduction",
-          },
+          // {
+          //   text: "HTML",
+          //   link: "/html/introduction",
+          // },
           {
             text: "TypeScript",
             link: "/typescript/1_introduction",
@@ -42,16 +42,16 @@ export default defineUserConfig({
       },
     ],
     sidebar: {
-      "/html/": [
-        {
-          text: "基础",
-          collapsible: true,
-          children: [
-            "/html/introduction", //简介
-            "/html/base-elements", //基础元素
-          ],
-        },
-      ],
+      // "/html/": [
+      //   {
+      //     text: "基础",
+      //     collapsible: true,
+      //     children: [
+      //       "/html/introduction", //简介
+      //       "/html/base-elements", //基础元素
+      //     ],
+      //   },
+      // ],
       "/typescript/": [
         {
           text: "TypeScript",
