@@ -3,7 +3,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 export default defineUserConfig({
   base: "/blog/",
   lang: "zh-CN",
-  title: "秋雨",
+  title: "秋雨不良人",
   description: "我与旧事归于尽，今年依旧花盛开。",
 
   theme: defaultTheme({
@@ -14,6 +14,10 @@ export default defineUserConfig({
     notFound: ["峰回路转多歧路,你走丢了哦！"],
     backToHome: "返回首页",
     navbar: [
+      {
+        text: "首页",
+        link: "/",
+      },
       {
         text: "前端基础",
         children: [
