@@ -65,6 +65,7 @@ export default defineUserConfig({
             "/typescript/2_basic_usage",
             "/typescript/3_any",
             "/typescript/4_type_system",
+            "/typescript/5_array",
           ],
         },
       ],
