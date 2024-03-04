@@ -17,3 +17,7 @@
   overflow: hidden; /* 隐藏超出容器的部分 */
   text-overflow: ellipsis; /* 在超出部分显示省略号 */
 }
+
+.color {
+  color: var(--search-accent-color);
+}

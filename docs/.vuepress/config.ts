@@ -31,6 +31,15 @@ export default defineUserConfig({
           },
         ],
       },
+      // {
+      //   text: "服务端",
+      //   children: [
+      //     {
+      //       text: "NestJs",
+      //       link: "/nestjs/introduction",
+      //     },
+      //   ],
+      // },
       {
         text: "面试题",
         children: [
@@ -77,6 +86,17 @@ export default defineUserConfig({
         // },
         "/interview/web/basics",
         "/interview/react_interview/basics",
+      ],
+      "/nestjs/": [
+        {
+          text: "介绍",
+          link: "/nestjs/introduction",
+        },
+        {
+          collapsible: true,
+          text: "概述",
+          children: ["/nestjs/basic", "/nestjs/controllers"],
+        },
       ],
       // "/html/introduction", "/html/base-elements"
       //   {
