@@ -83,6 +83,7 @@ export default defineUserConfig({
             "/typescript/6_tuple",
             "/typescript/7_symbol",
             "/typescript/8_function",
+            "/typescript/9_object",
           ],
         },
       ],
