@@ -31,6 +31,7 @@ export default defineUserConfig({
           },
         ],
       },
+
       // {
       //   text: "服务端",
       //   children: [
@@ -52,6 +53,10 @@ export default defineUserConfig({
             link: "/interview/react_interview/basics",
           },
         ],
+      },
+      {
+        text: "Github",
+        link: "https://github.com/qiuyulc/blog",
       },
     ],
     sidebar: {
@@ -75,6 +80,9 @@ export default defineUserConfig({
             "/typescript/3_any",
             "/typescript/4_type_system",
             "/typescript/5_array",
+            "/typescript/6_tuple",
+            "/typescript/7_symbol",
+            "/typescript/8_function",
           ],
         },
       ],
