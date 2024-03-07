@@ -95,6 +95,8 @@ export default defineUserConfig({
         // },
         "/interview/web/basics",
         "/interview/react_interview/basics",
+        "/interview/redux/basics",
+        "/interview/react_router/basics",
       ],
       "/nestjs/": [
         {
