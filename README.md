@@ -15,7 +15,7 @@
 
 ## 面试题
 
-- [ ] React
-- [ ] Redux + React Router
+- [x] React
+- [x] Redux + React Router
 - [ ] JavaScript
 - [ ] 前端基础
