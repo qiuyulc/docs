@@ -52,6 +52,14 @@ export default defineUserConfig({
             text: "React",
             link: "/interview/react_interview/basics",
           },
+          {
+            text: "Redux",
+            link: "/interview/redux/basics",
+          },
+          {
+            text: "ReactRouter",
+            link: "/interview/react_router/basics",
+          },
         ],
       },
       {
