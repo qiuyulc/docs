@@ -31,7 +31,10 @@ export default defineUserConfig({
           },
         ],
       },
-
+      {
+        text: "NextJS",
+        link: "/nextjs/basics",
+      },
       // {
       //   text: "服务端",
       //   children: [
