@@ -18,6 +18,7 @@ export default defineUserConfig({
         text: "首页",
         link: "/",
       },
+
       {
         text: "前端基础",
         children: [
@@ -26,15 +27,19 @@ export default defineUserConfig({
           //   link: "/html/introduction",
           // },
           {
-            text: "TypeScript",
-            link: "/typescript/1_introduction",
+            text: "JavaScript",
+            link: "/javascript/basic",
           },
+          // {
+          //   text: "TypeScript",
+          //   link: "/typescript/1_introduction",
+          // },
         ],
       },
-      {
-        text: "NextJS",
-        link: "/nextjs/basics",
-      },
+      // {
+      //   text: "NextJS",
+      //   link: "/nextjs/basics",
+      // },
       // {
       //   text: "服务端",
       //   children: [
@@ -81,23 +86,32 @@ export default defineUserConfig({
       //     ],
       //   },
       // ],
-      "/typescript/": [
+
+      "/javascript/": [
         {
-          text: "TypeScript",
+          text: "JavaScript",
           collapsible: true,
-          children: [
-            "/typescript/1_introduction",
-            "/typescript/2_basic_usage",
-            "/typescript/3_any",
-            "/typescript/4_type_system",
-            "/typescript/5_array",
-            "/typescript/6_tuple",
-            "/typescript/7_symbol",
-            "/typescript/8_function",
-            "/typescript/9_object",
-          ],
+          children: ["/javascript/basic", "/javascript/jsbasic"],
         },
       ],
+      // "/typescript/": [
+      //   {
+      //     text: "TypeScript",
+      //     collapsible: true,
+      //     children: [
+      //       "/typescript/1_introduction",
+      //       "/typescript/2_basic_usage",
+      //       "/typescript/3_any",
+      //       "/typescript/4_type_system",
+      //       "/typescript/5_array",
+      //       "/typescript/6_tuple",
+      //       "/typescript/7_symbol",
+      //       "/typescript/8_function",
+      //       "/typescript/9_object",
+      //       "/typescript/10_interface",
+      //     ],
+      //   },
+      // ],
       "/interview/": [
         // {
         //   text: "面试题",
@@ -109,17 +123,17 @@ export default defineUserConfig({
         "/interview/redux/basics",
         "/interview/react_router/basics",
       ],
-      "/nestjs/": [
-        {
-          text: "介绍",
-          link: "/nestjs/introduction",
-        },
-        {
-          collapsible: true,
-          text: "概述",
-          children: ["/nestjs/basic", "/nestjs/controllers"],
-        },
-      ],
+      // "/nestjs/": [
+      //   {
+      //     text: "介绍",
+      //     link: "/nestjs/introduction",
+      //   },
+      //   {
+      //     collapsible: true,
+      //     text: "概述",
+      //     children: ["/nestjs/basic", "/nestjs/controllers"],
+      //   },
+      // ],
       // "/html/introduction", "/html/base-elements"
       //   {
       //         text: "HTML",
