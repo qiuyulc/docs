@@ -19,35 +19,18 @@ export default defineUserConfig({
         link: "/",
       },
 
-      {
-        text: "前端基础",
-        children: [
-          // {
-          //   text: "HTML",
-          //   link: "/html/introduction",
-          // },
-          {
-            text: "JavaScript",
-            link: "/javascript/basic",
-          },
-          // {
-          //   text: "TypeScript",
-          //   link: "/typescript/1_introduction",
-          // },
-        ],
-      },
+      // {
+      //   text: "前端基础",
+      //   children: [
+      //     // {
+      //     //   text: "TypeScript",
+      //     //   link: "/typescript/1_introduction",
+      //     // },
+      //   ],
+      // },
       // {
       //   text: "NextJS",
       //   link: "/nextjs/basics",
-      // },
-      // {
-      //   text: "服务端",
-      //   children: [
-      //     {
-      //       text: "NestJs",
-      //       link: "/nestjs/introduction",
-      //     },
-      //   ],
       // },
       {
         text: "面试题",
@@ -76,24 +59,6 @@ export default defineUserConfig({
       },
     ],
     sidebar: {
-      // "/html/": [
-      //   {
-      //     text: "基础",
-      //     collapsible: true,
-      //     children: [
-      //       "/html/introduction", //简介
-      //       "/html/base-elements", //基础元素
-      //     ],
-      //   },
-      // ],
-
-      "/javascript/": [
-        {
-          text: "JavaScript",
-          collapsible: true,
-          children: ["/javascript/basic", "/javascript/jsbasic"],
-        },
-      ],
       // "/typescript/": [
       //   {
       //     text: "TypeScript",
@@ -123,32 +88,6 @@ export default defineUserConfig({
         "/interview/redux/basics",
         "/interview/react_router/basics",
       ],
-      // "/nestjs/": [
-      //   {
-      //     text: "介绍",
-      //     link: "/nestjs/introduction",
-      //   },
-      //   {
-      //     collapsible: true,
-      //     text: "概述",
-      //     children: ["/nestjs/basic", "/nestjs/controllers"],
-      //   },
-      // ],
-      // "/html/introduction", "/html/base-elements"
-      //   {
-      //         text: "HTML",
-      //         link: "/html",
-      //         children: [
-      //             {
-      //                 text: "认识HTML",
-      //                 link: "/html/introduction",
-      //             },
-      //             {
-      //                 text: "基础元素",
-      //                 link: "/html/base-elements",
-      //             },
-      //         ],
-      //     },
     },
   }),
   plugins: [
