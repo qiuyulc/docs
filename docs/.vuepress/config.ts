@@ -54,6 +54,15 @@ export default defineUserConfig({
         ],
       },
       {
+        text: "培训机构课程",
+        children: [
+          {
+            text: "拉钩教育",
+            link: "/training-course/lg/basic",
+          },
+        ],
+      },
+      {
         text: "Github",
         link: "https://github.com/qiuyulc/blog",
       },
@@ -87,6 +96,27 @@ export default defineUserConfig({
         "/interview/react_interview/basics",
         "/interview/redux/basics",
         "/interview/react_router/basics",
+      ],
+      "/training-course/": [
+        {
+          text: "拉钩教育",
+          collapsible: true,
+          children: [
+            {
+              text: "大前端高薪修炼营",
+              link: "/training-course/lg/basic",
+            },
+            {
+              text: "JavaScript 深度剖析",
+              collapsible: true,
+              children: [
+                "/training-course/lg/js/func",
+                "/training-course/lg/js/async",
+                "/training-course/lg/js/promise",
+              ],
+            },
+          ],
+        },
       ],
     },
   }),
