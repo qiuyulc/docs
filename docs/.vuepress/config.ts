@@ -63,6 +63,15 @@ export default defineUserConfig({
         ],
       },
       {
+        text:'其他',
+        children:[
+          {
+            text:'pixi',
+            link:'/other/pixi/01'
+          }
+        ]
+      },
+      {
         text: "Github",
         link: "https://github.com/qiuyulc/blog",
       },
@@ -118,6 +127,15 @@ export default defineUserConfig({
           ],
         },
       ],
+      "/other/pixi":[
+        {
+          text:'pixi',
+          collapsible:true,
+          children:[
+            '/other/pixi/01'
+          ]
+        }
+      ]
     },
   }),
   plugins: [
