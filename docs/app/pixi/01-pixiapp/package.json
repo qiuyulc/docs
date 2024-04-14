@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "pixi.js": "7.1.1",
+    "pixi-filters": "^5.1.1",
+    "pixi.js": "^7.1.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {

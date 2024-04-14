@@ -1,26 +1,3 @@
-# Pixi初识 以及搭建环境
-
-课程视频 [Pixi.js全新视频](https://www.bilibili.com/video/BV1rG4y1M7MS/?spm_id_from=333.337.search-card.all.click&vd_source=9886bf14df2da5540ce6bd99b5aa71b0)
-
-## 依赖项
-- node
-- pnpm
-- vue 3.4.21
-- vite 5.2.0
-
-### mac环境
-建议安装nvm,通过nvm安装node
-
-pnpm 使用 `brew install pnpm` 
-
-具体的安装步骤 直接百度，这里不做赘述
-
-## 环境搭建
-
-- `pnpm create vite` 创建项目
-- `pnpm install pixi.js@^7.1.1` 安装pixi 
-
-```vue
 
 <template>
   <div>
@@ -43,7 +20,7 @@ import { Application,Graphics} from 'pixi.js';
     resolution:window.devicePixelRatio || 1,
     antialias:true,//抗锯齿
   });
-
+  
   //追加元素
   document.body.appendChild(app.view);
 
@@ -71,9 +48,3 @@ canvas{
   top:0;
 }
 </style>
-
-```
-
-效果图
-
-![效果图](images/xg.png)

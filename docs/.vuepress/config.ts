@@ -132,7 +132,8 @@ export default defineUserConfig({
           text:'pixi',
           collapsible:true,
           children:[
-            '/other/pixi/01'
+            '/other/pixi/01',
+            '/other/pixi/02'
           ]
         }
       ]
