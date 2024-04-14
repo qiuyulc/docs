@@ -33,6 +33,15 @@ export default defineUserConfig({
       //   link: "/nextjs/basics",
       // },
       {
+        text:'JavaScript',
+        children:[
+          {
+            text:'现代js教程',
+            link:'/javascript/01'
+          }
+        ]
+      },
+      {
         text: "面试题",
         children: [
           {
@@ -95,6 +104,9 @@ export default defineUserConfig({
       //     ],
       //   },
       // ],
+      "/javascript/":[
+        "/javascript/01"
+      ],
       "/interview/": [
         // {
         //   text: "面试题",
