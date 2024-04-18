@@ -114,4 +114,123 @@ function filter(array, fn) {
 
   return results;
 }
+let r = filter(array, (item) => {
+  return item % 2 === 0;
+});
+```
+
+- 函数作为返回值
+
+```js
+function makeFn() {
+  let msg = "Hello function";
+  return function () {
+    console.log(msg);
+  };
+}
+const fn = makeFn();
+fn(); //调用方式1
+
+makeFn()(); //调用方式2
+
+// once函数 只被执行一次的函数
+function once(fn) {
+  let done = false;
+  return function () {
+    if (!done) {
+      done = true;
+      return fn.apply(this, arguments);
+    }
+  };
+}
+let pay = once(function (money) {
+  console.log(`支付 ${money} RMB`);
+});
+
+pay(5);
+pay(5);
+pay(5);
+pay(5);
+// 在第一次调用时，done被修改为true，并且因为闭包的原因被保存了状态
+```
+
+- 高阶函数的意义
+
+  - 抽象可以帮我们屏蔽细节，只需要关注与我们的目标
+  - 高阶函数是用来抽象通用的问题
+
+- 闭包
+
+  - 闭包：函数和其周围的状态（词法环境）的引用捆绑在一起形成闭包。
+
+    - 可以在另一个作用域中调用一个函数的内容部函数并访问到该函数的作用域中的成员。
+
+  - 闭包的本质：函数在执行的时候会放到一个执行栈上当函数执行完毕后会从执行栈上移除，**但是堆上的作用域成员因为被外部引用不能释放**，因此函内部函数依旧可以访问外部函数的成员。
+
+- 闭包案例
+
+```js
+// Math.pow(4, 2);
+// Math.pow(5, 2);
+
+function makePower(power) {
+  return function (number) {
+    return Math.pow(number, power);
+  };
+}
+//求平方
+let power2 = makePower(2);
+let power3 = makePower(3);
+
+console.log(power2(4));
+console.log(power2(5));
+console.log(power3(4));
+```
+
+```js
+// 基本工资，绩效工资 为不同工资计算总工资的函数
+// getSalary(12000, 2000);
+// getSalary(15000, 3000);
+// getSalary(15000, 4000);
+
+function makeSalary(base) {
+  return function (performance) {
+    return base + performance;
+  };
+}
+
+let salaryLevel1 = makeSalary(12000);
+let salaryLevel2 = makeSalary(15000);
+
+console.log(salaryLevel1(2000));
+console.log(salaryLevel1(3000));
+```
+
+- 纯函数：相同的输入永远得到相同的输出，而且没有任何可观察的副作用
+  - 纯函数就类似数学中的函数（用来描述输入和输出之间的关系），y=f(x)
+  - 函数式编程不会保留计算中间的结果，所以变量是不可变的（无状态的）
+  - 我们可以把一个函数的执行结果交给另一个函数处理
+
+```js
+//纯函数和不纯函数
+//纯函数
+let arr = [1, 2, 3, 4, 5, 6];
+console.log(arr.slice(0, 3));
+console.log(arr.slice(0, 3));
+console.log(arr.slice(0, 3));
+//不纯函数
+console.log(arr.splice(0, 3));
+console.log(arr.splice(0, 3));
+console.log(arr.splice(0, 3));
+```
+
+```js
+// 纯函数
+function getSum(n1, n2) {
+  return n1 + n2;
+}
+
+console.log(1, 2);
+console.log(1, 2);
+console.log(1, 2);
 ```
