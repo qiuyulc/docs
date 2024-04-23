@@ -41,6 +41,15 @@ export default defineUserConfig({
           }
         ]
       },
+
+      {
+        text: "前端",
+        link:"/training-course/lg/js/func"
+      },
+      {
+        text:'实战',
+        link:'/actual-combat/node/node-reptile',
+      },
       {
         text: "面试题",
         children: [
@@ -59,15 +68,6 @@ export default defineUserConfig({
           {
             text: "ReactRouter",
             link: "/interview/react_router/basics",
-          },
-        ],
-      },
-      {
-        text: "培训机构课程",
-        children: [
-          {
-            text: "拉钩教育",
-            link: "/training-course/lg/basic",
           },
         ],
       },
@@ -120,24 +120,17 @@ export default defineUserConfig({
       ],
       "/training-course/": [
         {
-          text: "拉钩教育",
+          text: "JavaScript相关",
           collapsible: true,
           children: [
-            {
-              text: "大前端高薪修炼营",
-              link: "/training-course/lg/basic",
-            },
-            {
-              text: "JavaScript 深度剖析",
-              collapsible: true,
-              children: [
                 "/training-course/lg/js/func",
                 "/training-course/lg/js/async",
                 "/training-course/lg/js/promise",
               ],
-            },
-          ],
         },
+      ],
+      "/actual-combat/":[
+        '/actual-combat/node/node-reptile'
       ],
       "/other/pixi":[
         {

@@ -1,0 +1,19 @@
+{
+  "name": "pc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cli-progress": "^3.12.0",
+    "commander": "^12.0.0",
+    "inquirer": "^9.2.19",
+    "superagent": "^8.1.2"
+  }
+}
