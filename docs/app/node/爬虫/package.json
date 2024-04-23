@@ -13,7 +13,7 @@
     "cheerio": "^1.0.0-rc.12",
     "cli-progress": "^3.12.0",
     "commander": "^12.0.0",
-    "inquirer": "^9.2.19",
+    "inquirer": "^8.0.0",
     "superagent": "^8.1.2"
   }
 }
