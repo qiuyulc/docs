@@ -32,30 +32,34 @@ export default defineUserConfig({
       //   text: "NextJS",
       //   link: "/nextjs/basics",
       // },
-      {
-        text:'JavaScript',
-        children:[
-          {
-            text:'现代js教程',
-            link:'/javascript/01'
-          }
-        ]
-      },
+      // {
+      //   text:'JavaScript',
+      //   children:[
+      //     {
+      //       text:'现代js教程',
+      //       link:'/javascript/01'
+      //     }
+      //   ]
+      // },
 
-      {
-        text: "前端",
-        link:"/training-course/lg/js/func"
-      },
-      {
-        text:'实战',
-        link:'/actual-combat/node/node-reptile',
-      },
+      // {
+      //   text: "前端",
+      //   link:"/training-course/lg/js/func"
+      // },
+      // {
+      //   text: "实战",
+      //   link: "/actual-combat/node/node-reptile",
+      // },
       {
         text: "面试题",
         children: [
           {
             text: "前端常识",
             link: "/interview/web/basics",
+          },
+          {
+            text: "ES",
+            link: "/interview/es6/basics",
           },
           {
             text: "React",
@@ -71,15 +75,15 @@ export default defineUserConfig({
           },
         ],
       },
-      {
-        text:'其他',
-        children:[
-          {
-            text:'pixi',
-            link:'/other/pixi/01'
-          }
-        ]
-      },
+      // {
+      //   text: "其他",
+      //   children: [
+      //     {
+      //       text: "pixi",
+      //       link: "/other/pixi/01",
+      //     },
+      //   ],
+      // },
       {
         text: "Github",
         link: "https://github.com/qiuyulc/blog",
@@ -104,9 +108,7 @@ export default defineUserConfig({
       //     ],
       //   },
       // ],
-      "/javascript/":[
-        "/javascript/01"
-      ],
+      "/javascript/": ["/javascript/01"],
       "/interview/": [
         // {
         //   text: "面试题",
@@ -123,25 +125,20 @@ export default defineUserConfig({
           text: "JavaScript相关",
           collapsible: true,
           children: [
-                "/training-course/lg/js/func",
-                "/training-course/lg/js/async",
-                "/training-course/lg/js/promise",
-              ],
+            "/training-course/lg/js/func",
+            "/training-course/lg/js/async",
+            "/training-course/lg/js/promise",
+          ],
         },
       ],
-      "/actual-combat/":[
-        '/actual-combat/node/node-reptile'
-      ],
-      "/other/pixi":[
+      "/actual-combat/": ["/actual-combat/node/node-reptile"],
+      "/other/pixi": [
         {
-          text:'pixi',
-          collapsible:true,
-          children:[
-            '/other/pixi/01',
-            '/other/pixi/02'
-          ]
-        }
-      ]
+          text: "pixi",
+          collapsible: true,
+          children: ["/other/pixi/01", "/other/pixi/02"],
+        },
+      ],
     },
   }),
   plugins: [
