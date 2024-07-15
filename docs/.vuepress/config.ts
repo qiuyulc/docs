@@ -116,6 +116,7 @@ export default defineUserConfig({
         //   children: [""],
         // },
         "/interview/web/basics",
+        "/interview/es6/basics",
         "/interview/react_interview/basics",
         "/interview/redux/basics",
         "/interview/react_router/basics",
