@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>示例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .header {
+        display: flex;
+        width: 500px;
+      }
+
+      .header li {
+        flex: 1;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      .box {
+        position: relative;
+        height: 200px;
+      }
+
+      .box li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 500px;
+        height: 200px;
+        background-color: yellow;
+        display: none;
+      }
+
+      .header .active {
+        background-color: red;
+      }
+
+      .box .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1">
+      <ul class="header">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+      <ul class="box">
+        <li class="active">111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+      </ul>
+    </div>
+
+    <div class="container2">
+      <ul class="header">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+      <ul class="box">
+        <li class="active">111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+      </ul>
+    </div>
+
+    <script>
+      // function Tabs(selector, type) {
+      //   this.selector = document.querySelector(`${selector}`);
+      //   this.headers = this.selector.querySelectorAll(".header li");
+      //   this.boxs = this.selector.querySelectorAll(".box li");
+      //   console.log(this.headers, this.boxs);
+      //   this.type = type || "click";
+      //   this.change();
+      // }
+
+      // Tabs.prototype.change = function () {
+      //   for (let i = 0; i < this.headers.length; i++) {
+      //     this.headers[i].addEventListener(this.type, () => {
+      //       for (let m = 0; m < this.headers.length; m++) {
+      //         this.headers[m].classList.remove("active");
+      //         this.boxs[m].classList.remove("active");
+      //       }
+
+      //       this.headers[i].classList.add("active");
+      //       this.boxs[i].classList.add("active");
+      //     });
+      //   }
+      // };
+
+      // new Tabs(".container1", "click");
+      // new Tabs(".container2", "mouseover");
+
+      //类模式
+
+      class Tabs {
+        constructor(selector, type) {
+          this.selector = document.querySelector(`${selector}`);
+          this.headers = this.selector.querySelectorAll(".header li");
+          this.boxs = this.selector.querySelectorAll(".box li");
+          console.log(this.headers, this.boxs);
+          this.type = type || "click";
+          this.change();
+        }
+
+        change() {
+          for (let i = 0; i < this.headers.length; i++) {
+            this.headers[i].addEventListener(this.type, () => {
+              for (let m = 0; m < this.headers.length; m++) {
+                this.headers[m].classList.remove("active");
+                this.boxs[m].classList.remove("active");
+              }
+
+              this.headers[i].classList.add("active");
+              this.boxs[i].classList.add("active");
+            });
+          }
+        }
+      }
+
+      new Tabs(".container1", "click");
+      new Tabs(".container2", "mouseover");
+    </script>
+  </body>
+</html>

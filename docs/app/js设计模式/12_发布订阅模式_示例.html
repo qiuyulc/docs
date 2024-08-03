@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发布订阅模式</title>
+  </head>
+  <body>
+    <script>
+      /*
+          1. 观察者和目标要相互知道
+          2. 发布者和订阅者不用互相知道，通过第三方实现调度，属于经过解耦合的观察者模式。
+          */
+
+      const PubSub = {
+        message: {},
+        publish(type, data) {
+          // this.list.forEach((item) => item());
+          if (this.message[type]) {
+            return;
+          }
+          this.message[type].forEach((element) => {
+            item(data);
+          });
+        },
+        subscribe(type, cb) {
+          if (!this.message[type]) {
+            this.message[type] = [cb];
+          } else {
+            this.message[type].push(cb);
+          }
+        },
+        unsubscribe(type, cb) {
+          if (!this.message[type]) return;
+          if (cb) {
+            //取消所有
+            this.message[type] && (this.message[type].length = 0);
+          } else {
+            this.message[type] = this.message[type].filter(
+              (item) => item !== cb
+            );
+          }
+        },
+      };
+
+      function testA(data) {
+        console.log("testA", data);
+      }
+      function testB() {
+        console.log("testB", data);
+      }
+
+      function testC() {
+        console.log("testC", data);
+      }
+
+      PubSub.subscribe("A", testA);
+      PubSub.subscribe("A", testA);
+      PubSub.subscribe("B", testB);
+      // PubSub.subscribe(testB);
+
+      // PubSub.publish();
+    </script>
+  </body>
+</html>

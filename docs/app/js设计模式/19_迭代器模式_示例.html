@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>迭代器模式</title>
+  </head>
+  <body>
+    <script>
+      var obj = {
+        code: 200,
+        name: "kerwin",
+        list: ["aaa", "bbb", "ccc"],
+        [Symbol.iterator]: function () {
+          let index = 0;
+          console.log(12);
+          return {
+            next: () => {
+              if (index < this.list.length) {
+                return {
+                  value: this.list[index++],
+                  done: false,
+                };
+              } else {
+                return {
+                  value: undefined,
+                  done: true,
+                };
+              }
+            },
+          };
+        },
+      };
+
+      // var it = obj[Symbol.iterator]();
+      // it.next();
+      // it.next();
+      // it.next();
+      // it.next();
+
+      for (let index of obj) {
+        console.log(index);
+      }
+    </script>
+  </body>
+</html>

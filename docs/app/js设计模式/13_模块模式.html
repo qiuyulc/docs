@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模块模式</title>
+  </head>
+  <body>
+    <script>
+      /*
+        模块模式最初被定义在传统软件工程中为类提供私有和公共封装的一种方法
+
+        能够使一个单独的对象拥有公共/私有的方法和变量，从而屏蔽来自全局作用域
+        的特殊部分。这样可以减少我们的函数名与
+        页面中其他脚本区域内定义的函数名冲突的可能性
+        
+        */
+      //1.闭包
+
+      const obj = (function () {
+        var count = 0;
+        return {
+          increse() {
+            return ++count;
+          },
+          decrese() {
+            return --count;
+          },
+        };
+      })();
+      console.log(obj);
+
+      //模块化
+    </script>
+    <script type="module">
+      import myObj from "./1.js";
+      console.log(myObj);
+    </script>
+
+    <script type="module">
+      import { increse, decrese } from "./2.js";
+    </script>
+  </body>
+</html>

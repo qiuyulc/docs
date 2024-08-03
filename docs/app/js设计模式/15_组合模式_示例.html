@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>桥接模式</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      /*
+      组合模式在对象间形成树形结构
+      组合模式中基本对象和组合对象被一致对待
+      无须关心对象有多少层，调用时只需在根部进行调用。
+
+      它在我们树形结构的问题中，模糊了简单元素和复杂元素的概念，客户程序可以向处理简单元素一样来处理复杂元素，
+      从而使得客户程序与复杂元素的内部结构解耦。
+
+      */
+
+      const Folder = function (folder) {
+        this.folder = folder;
+        this.list = []; //保存子文件夹或者文件
+      };
+
+      Folder.prototype.add = function (res) {
+        this.list.push(res);
+      };
+
+      Folder.prototype.scan = function (res) {
+        console.log("扫描文件夹", this.folder);
+        if (this.folder === "root") {
+        } else {
+          var oul = document.createElement("ul");
+          var oli = document.createElement("li");
+          oli.innerHTML = this.folder;
+          var ochildUl = document.createElement("ul");
+          oli.appendChild(ochildUl);
+          oul.appendChild(oli);
+          root.appendChild(oul);
+        }
+        for (let i = 0; i < this.list.length; i++) {
+          this.list[i].scan(ochildUl);
+        }
+      };
+
+      const File = function (file) {
+        this.file = file;
+      };
+
+      File.prototype.scan = function (ochildUl) {
+        console.log("开始扫描文件", this.file);
+        var oli = document.createElement("li");
+        oli.innerHTML = this.file;
+        ochildUl.appendChild(oli);
+      };
+      //根
+      let rootFolder = new Folder("root");
+      // 子文件夹
+      let htmlFolder = new Folder("用户管理");
+      let cssFolder = new Folder("权限管理");
+      let jsFolder = new Folder("新闻管理");
+
+      //文件
+      let html1 = new File("添加用户");
+      let html2 = new File("编辑用户");
+
+      let css1 = new File("添加权限");
+      let css2 = new File("编辑权限");
+
+      let es5 = new File("添加新闻");
+      let es6 = new File("编辑新闻");
+
+      rootFolder.add(htmlFolder);
+      rootFolder.add(cssFolder);
+      rootFolder.add(jsFolder);
+
+      htmlFolder.add(html1);
+      htmlFolder.add(html2);
+      cssFolder.add(css1);
+      cssFolder.add(css2);
+      jsFolder.add(es5);
+      jsFolder.add(es6);
+
+      rootFolder.scan();
+    </script>
+  </body>
+</html>

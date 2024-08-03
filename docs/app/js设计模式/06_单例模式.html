@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>单例模式</title>
+  </head>
+  <body>
+    <script>
+      /*
+        1. 保证一个类仅有一个实例，并提供一个访问它的全局访问点
+        2. 主要解决一个全局使用的类频繁的创建和销毁，占用内存。
+        */
+
+      // 闭包的形式
+      //   var Singleton = (function () {
+      //     var instance;
+      //     function User(name, age) {
+      //       this.name = name;
+      //       this.age = age;
+      //     }
+      //     return function (name, age) {
+      //       if (!instace) {
+      //         instance = new User(name, age);
+      //       }
+      //       return instance;
+      //     };
+      //   })();
+
+      //es6
+
+      class Singleton {
+        constructor(name, age) {
+          if (!Singleton.instance) {
+            this.name = name;
+            this.age = age;
+            Singleton.instance = this;
+          }
+          return Singleton.instance;
+        }
+      }
+    </script>
+  </body>
+</html>

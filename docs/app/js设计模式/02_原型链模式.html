@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>构造器模式</title>
+  </head>
+  <body>
+    <!-- <script>
+      //   var employee1 = {
+      //     name: "kerwin",
+      //     age: 100,
+      //   };
+      //   var employee2 = {
+      //     name: "kerwin2",
+      //     age: 100,
+      //   };
+      //es5
+      function Employee(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      Employee.prototype.say = function () {
+        console.log(this.name + "_" + this.age);
+      };
+      var employee1 = new Employee("kerwin", 100);
+      var employee2 = new Employee("kerwin2", 10);
+    </script> -->
+
+    <script>
+      //类 构造器
+      class Employee {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        say() {
+          console.log(this.name + "_" + this.age);
+        }
+      }
+
+      var employee1 = new Employee("kerwin", 100);
+      console.log(employee1);
+
+      employee1.say();
+      //在class中 say方法是挂载到原型上的
+    </script>
+  </body>
+</html>

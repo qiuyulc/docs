@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>装饰器模式</title>
+  </head>
+  <body>
+    <button id="filmbtn">点击</button>
+    <script>
+      /*
+        装饰器模式能够很好的对已有功能进行拓展，这样不会更改原有的代码，对其他的业务产生
+        影响，这方便我们在较小改动下对软件功能进行拓展。
+        */
+
+      Function.prototype.before = function (beforeFn) {
+        var _this = this;
+        return function () {
+          //先进行前置函数调用
+          beforeFn.apply(this, arguments);
+
+          //执行原来的函数
+          return _this.apply(this, arguments);
+        };
+      };
+
+      Function.prototype.after = function (afterFn) {
+        var _this = this;
+        return function () {
+          const result = _this.apply(this, arguments);
+          afterFn.apply(this, arguments);
+          return result;
+        };
+      };
+
+      function test() {
+        console.log(111111);
+      }
+
+      //test1 = new Function()
+      //   var test1 = test
+      //     .before(function () {
+      //       console.log("00000");
+      //     })
+      //     .after(function () {
+      //       console.log("22222");
+      //     });
+
+      //   test1();
+      function log() {
+        console.log("上传信息");
+      }
+
+      function render() {
+        console.log("页面逻辑处理");
+      }
+
+      render = render.before(log);
+      filmbtn.onclick = () => {
+        // log();
+        render();
+      };
+
+      //axios,jquery,before
+
+      function ajax(url, method, params) {
+        console.log(url, method, params);
+      }
+
+      ajax1 = ajax.before((url, method, params) => {
+        params.token = "aaaaaaa";
+      });
+
+      ajax1("/api", "post", {
+        name: "kerwin",
+      });
+
+      //不需要 ajax
+    </script>
+  </body>
+</html>

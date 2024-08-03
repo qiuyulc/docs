@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>宏命令模式</title>
+  </head>
+  <body>
+    <script>
+      /*
+      命令模式和组合模式的组合
+      一组命令的集合
+      */
+
+      class MacroCommand {
+        constructor() {
+          this.list = [];
+        }
+
+        add(command) {
+          this.list.push(command);
+        }
+
+        execute() {
+          for (let item of this.list) {
+            item.execute();
+          }
+        }
+      }
+
+      const Tabs = {
+        execute() {
+          console.log("选项卡执行");
+        },
+        init() {
+          console.log("init");
+        },
+        getData() {
+          console.log("getData");
+        },
+        render() {
+          console.log("render");
+        },
+      };
+
+      const Swipe = {
+        execute() {
+          console.log("轮播执行");
+        },
+      };
+      const macroCommand = new MacroCommand();
+      macroCommand.add(Tabs);
+      macroCommand.add(Swipe);
+      macroCommand.execute();
+    </script>
+  </body>
+</html>

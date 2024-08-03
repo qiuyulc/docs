@@ -51,6 +51,10 @@ export default defineUserConfig({
       //   link: "/actual-combat/node/node-reptile",
       // },
       {
+        text: "设计模式",
+        link: "/design_patterns/01",
+      },
+      {
         text: "面试题",
         children: [
           {
@@ -75,21 +79,42 @@ export default defineUserConfig({
           },
         ],
       },
-      // {
-      //   text: "其他",
-      //   children: [
-      //     {
-      //       text: "pixi",
-      //       link: "/other/pixi/01",
-      //     },
-      //   ],
-      // },
+      {
+        text: "其他",
+        children: [
+          {
+            text: "pixi",
+            link: "/other/pixi/01",
+          },
+        ],
+      },
       {
         text: "Github",
         link: "https://github.com/qiuyulc/blog",
       },
     ],
     sidebar: {
+      "/design_patterns/": [
+        "/design_patterns/01",
+        "/design_patterns/02",
+        "/design_patterns/03",
+        "/design_patterns/04",
+        "/design_patterns/05",
+        "/design_patterns/06",
+        "/design_patterns/07",
+        "/design_patterns/08",
+        "/design_patterns/09",
+        "/design_patterns/10",
+        "/design_patterns/11",
+        "/design_patterns/12",
+        "/design_patterns/13",
+        "/design_patterns/14",
+        "/design_patterns/15",
+        "/design_patterns/16",
+        "/design_patterns/17",
+        "/design_patterns/18",
+        "/design_patterns/19",
+      ],
       // "/typescript/": [
       //   {
       //     text: "TypeScript",
@@ -120,17 +145,6 @@ export default defineUserConfig({
         "/interview/react_interview/basics",
         "/interview/redux/basics",
         "/interview/react_router/basics",
-      ],
-      "/training-course/": [
-        {
-          text: "JavaScript相关",
-          collapsible: true,
-          children: [
-            "/training-course/lg/js/func",
-            "/training-course/lg/js/async",
-            "/training-course/lg/js/promise",
-          ],
-        },
       ],
       "/actual-combat/": ["/actual-combat/node/node-reptile"],
       "/other/pixi": [

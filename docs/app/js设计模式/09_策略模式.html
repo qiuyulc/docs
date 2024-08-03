@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>策略模式</title>
+  </head>
+  <body>
+    <script>
+      /*
+        策略模式定义了一系列算法，并将每个算法封装起来，使它们可以相互替换。
+
+        
+        */
+
+      const startegry = {
+        S: (salary) => {
+          return salary * 6;
+        },
+        A: (salary) => {
+          return salary * 4;
+        },
+        B: (salary) => {
+          return salary * 3;
+        },
+        C: (salary) => {
+          return salary * 2;
+        },
+        D: (salary) => {
+          return salary * 1;
+        },
+      };
+
+      function calBonus(level, salary) {
+        return startegry[level](salary);
+      }
+
+      calBonus("A", 10000);
+      calBonus("B", 8000);
+    </script>
+  </body>
+</html>

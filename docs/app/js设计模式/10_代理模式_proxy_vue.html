@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>代理模式</title>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      let vueobj = {};
+
+      let proxy = new Proxy(vueobj, {
+        get(target, key) {
+          return target[key];
+        },
+        set(target, key, value) {
+          if (key === "data") {
+            box.innerHTML = value;
+          }
+          target[key] = value;
+        },
+      });
+    </script>
+  </body>
+</html>
