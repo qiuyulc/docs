@@ -55,6 +55,10 @@ export default defineUserConfig({
         link: "/design_patterns/01",
       },
       {
+        text: "webpack",
+        link: "/webpack/1",
+      },
+      {
         text: "面试题",
         children: [
           {
@@ -94,6 +98,11 @@ export default defineUserConfig({
       },
     ],
     sidebar: {
+      "/webpack/":[
+        "/webpack/1",
+        "/webpack/2",
+        "/webpack/3"
+      ],
       "/design_patterns/": [
         "/design_patterns/01",
         "/design_patterns/02",
