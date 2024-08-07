@@ -51,6 +51,10 @@ export default defineUserConfig({
       //   link: "/actual-combat/node/node-reptile",
       // },
       {
+        text:"Promise",
+        link:"/promise/1"
+      },
+      {
         text: "设计模式",
         link: "/design_patterns/01",
       },
@@ -98,6 +102,9 @@ export default defineUserConfig({
       },
     ],
     sidebar: {
+      "/promise/":[
+        "/promise/1"
+      ],
       "/webpack/":[
         "/webpack/1",
         "/webpack/2",
