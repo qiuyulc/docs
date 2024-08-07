@@ -10,7 +10,7 @@ module.exports = {
         //__dirname nodejs的变量，代表当前文件的文件夹目录
         path: path.resolve(__dirname, 'dist'),//相对路径
         //文件名
-        filename: 'main.js'
+        filename: 'static/js/main.js'
     },
     //加载器
     module: {
@@ -53,11 +53,18 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|webp)$/,
                 type: 'asset',
-                // parser: {
-                //     dataUrlCondition: {
-                //         maxSize: 4 * 1024 // 4kb
-                //     }
-                // }
+                parser: {
+                    //小于10kb的图片转base64
+                    //优点：减少请求数量 缺点：体积会更大
+                    dataUrlCondition: {
+                        maxSize: 10 * 1024 // 10kb
+                    }
+                },
+                generator: {
+                    //输出图片名称
+                    //[hash:10] hash 取前10位
+                    filename: "static/images/[hash:10][ext][query]"
+                }
             }
         ],
     },
