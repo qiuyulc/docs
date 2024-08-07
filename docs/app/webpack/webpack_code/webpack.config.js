@@ -1,0 +1,62 @@
+const path = require('path');
+
+
+module.exports = {
+    //入口
+    entry: "./src/main.js",//相对路径
+    //输出
+    output: {
+        //文件的输出路径
+        //__dirname nodejs的变量，代表当前文件的文件夹目录
+        path: path.resolve(__dirname, 'dist'),//相对路径
+        //文件名
+        filename: 'main.js'
+    },
+    //加载器
+    module: {
+        rules: [
+            {
+                // 用来匹配 .css 结尾的文件
+                test: /\.css$/,
+                // use 数组里面 Loader 执行顺序是从右到左
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.less$/,
+                //loader 只能使用一个 loader
+                use: [
+                    // compiles Less to CSS
+                    'style-loader',
+                    'css-loader',
+                    'less-loader',
+                ],
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    // 将 JS 字符串生成为 style 节点
+                    'style-loader',
+                    // 将 CSS 转化成 CommonJS 模块
+                    'css-loader',
+                    // 将 Sass 编译成 CSS
+                    'sass-loader',
+                ],
+            },
+            {
+                test: /\.styl$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "stylus-loader", // 将stylus编译成css文件
+                ],
+            },
+        ],
+    },
+
+    //插件
+    plugins: [
+        //plugin的配置
+    ],
+    //模式
+    mode: 'development'
+}
