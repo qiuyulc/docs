@@ -10,7 +10,10 @@ module.exports = {
         //__dirname nodejs的变量，代表当前文件的文件夹目录
         path: path.resolve(__dirname, 'dist'),//相对路径
         //文件名
-        filename: 'static/js/main.js'
+        filename: 'static/js/main.js',
+        //自动清空上次打包的内容
+        //原理：在打包前，将path整个目录内容清空，在进行打包。
+        clean: true,
     },
     //加载器
     module: {
