@@ -68,7 +68,15 @@ module.exports = {
                     //[hash:10] hash 取前10位
                     filename: "static/images/[hash:10][ext][query]"
                 }
-            }
+            },
+            {
+                test: /\.(ttf|woff2?)$/,
+                type: 'asset/resource',
+                generator: {
+                    //输出名称
+                    filename: "static/media/[hash:10][ext][query]"
+                }
+            },
         ],
     },
 
