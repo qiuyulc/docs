@@ -70,7 +70,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(ttf|woff2?)$/,
+                test: /\.(ttf|woff2?|map3|ma4|avi)$/,
                 type: 'asset/resource',
                 generator: {
                     //输出名称
