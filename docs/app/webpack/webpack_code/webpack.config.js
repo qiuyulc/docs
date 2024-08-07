@@ -50,6 +50,15 @@ module.exports = {
                     "stylus-loader", // 将stylus编译成css文件
                 ],
             },
+            {
+                test: /\.(png|jpe?g|gif|webp)$/,
+                type: 'asset',
+                // parser: {
+                //     dataUrlCondition: {
+                //         maxSize: 4 * 1024 // 4kb
+                //     }
+                // }
+            }
         ],
     },
 
