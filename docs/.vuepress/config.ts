@@ -103,7 +103,8 @@ export default defineUserConfig({
     ],
     sidebar: {
       "/promise/":[
-        "/promise/1"
+        "/promise/1",
+        "/promise/2",
       ],
       "/webpack/":[
         "/webpack/1",
