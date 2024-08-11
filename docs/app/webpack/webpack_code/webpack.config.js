@@ -10,7 +10,10 @@ module.exports = {
         //__dirname nodejs的变量，代表当前文件的文件夹目录
         path: path.resolve(__dirname, 'dist'),//相对路径
         //文件名
-        filename: 'main.js'
+        filename: 'static/js/main.js',
+        //自动清空上次打包的内容
+        //原理：在打包前，将path整个目录内容清空，在进行打包。
+        clean: true,
     },
     //加载器
     module: {
@@ -49,6 +52,30 @@ module.exports = {
                     "css-loader",
                     "stylus-loader", // 将stylus编译成css文件
                 ],
+            },
+            {
+                test: /\.(png|jpe?g|gif|webp)$/,
+                type: 'asset',
+                parser: {
+                    //小于10kb的图片转base64
+                    //优点：减少请求数量 缺点：体积会更大
+                    dataUrlCondition: {
+                        maxSize: 10 * 1024 // 10kb
+                    }
+                },
+                generator: {
+                    //输出图片名称
+                    //[hash:10] hash 取前10位
+                    filename: "static/images/[hash:10][ext][query]"
+                }
+            },
+            {
+                test: /\.(ttf|woff2?|map3|ma4|avi)$/,
+                type: 'asset/resource',
+                generator: {
+                    //输出名称
+                    filename: "static/media/[hash:10][ext][query]"
+                }
             },
         ],
     },
