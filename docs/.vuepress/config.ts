@@ -102,8 +102,11 @@ export default defineUserConfig({
       },
     ],
     sidebar: {
-      "/promise/": ["/promise/1"],
-      "/webpack/": [
+      "/promise/":[
+        "/promise/1",
+        "/promise/2",
+      ],
+      "/webpack/":[
         "/webpack/1",
         "/webpack/2",
         "/webpack/3",

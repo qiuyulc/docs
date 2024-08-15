@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script>
+      //   let promise = new Promise(function (resolve, reject) {
+      //     // 当 promise 被构造完成时，自动执行此函数
+      //     console.log(1);
+      //     // 1 秒后发出工作已经被完成的信号，并带有结果 "done"
+      //     setTimeout(() => resolve("done"), 1000);
+      //   }).then((res) => {
+      //     console.log(res);
+      //   });
+
+      // let promise = new Promise(function (resolve, reject) {
+      //     setTimeout(() => resolve("done"), 1000);
+      //   }).finally(()=>{
+      //     //无论promise状态如何，都会执行
+      //     console.log("finally");
+      //   }).then((result)=>{
+      //     //打印结果
+      //     console.log(result);
+      //   },(error)=>{
+      //     //不运行
+      //     console.log(error);
+      //   })
+
+      // let promise = new Promise(function (resolve, reject) {
+      //     setTimeout(() => resolve("done"), 1000);
+      //   }).then((result)=>{
+      //     //打印结果
+      //     console.log(result);
+      //   }).catch((error)=>{
+      //     console.log(error)
+      //   }).finally(()=>{
+      //     //无论promise状态如何，都会执行
+
+      //     console.log("finally",a);
+      //   })
+
+      //   function loadScript(src) {
+      //     return new Promise(function (resolve, reject) {
+      //       let script = document.createElement("script");
+      //       script.src = src;
+
+      //       script.onload = () => resolve(script);
+      //       script.onerror = () =>
+      //         reject(new Error(`Script load error for ${src}`));
+
+      //       document.head.append(script);
+      //     });
+      //   }
+      //   let promise = loadScript(
+      //     "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"
+      //   );
+
+      //   promise.then(
+      //     (script) => alert(`${script.src} is loaded!`),
+      //     (error) => alert(`Error: ${error.message}`)
+      //   );
+
+      //   promise.then((script) => alert("Another handler..."));
+
+      //   class Thenable {
+      //     constructor(num) {
+      //       this.num = num;
+      //     }
+      //     then(resolve, reject) {
+      //       console.log(resolve,'-------',reject); // function() { native code }
+      //       // 1 秒后使用 this.num*2 进行 resolve
+      //       setTimeout(() => resolve(this.num * 2), 1000); // (**)
+      //     }
+      //   }
+
+      //   new Promise((resolve) => resolve(1))
+      //     .then((result) => {
+      //         console.log(result)
+      //       return new Thenable(result); // (*)
+      //     })
+      //     .then((result)=>{
+      //         console.log(result)
+      //     }); // 1000ms 后显示 2
+
+      // class HandleResult {
+      //     constructor(result){
+      //         this.result = result;
+      //     }
+
+      //     then(resolve,reject){
+      //         setTimeout(()=>{
+      //             resolve(this.result*10)
+      //         },1000)
+      //     }
+      // }
+
+      function HandleResult(result) {
+        this.result = result;
+      }
+
+      HandleResult.prototype.then = function (resolve, reject) {
+        setTimeout(() => {
+          resolve(this.result * 10);
+        }, 1000);
+      };
+      new Promise((resolve, reject) => {
+        resolve(1);
+      })
+        .then((result) => {
+          return new HandleResult(result);
+        })
+        .then((res) => {
+          console.log(res);
+        });
+
+
+    function HandlePromise(callback){
+        
+    }
+    </script>
+  </body>
+</html>
