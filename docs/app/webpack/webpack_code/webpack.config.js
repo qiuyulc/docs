@@ -1,5 +1,5 @@
 const path = require('path');
-
+const ESlintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     //入口
@@ -77,12 +77,20 @@ module.exports = {
                     filename: "static/media/[hash:10][ext][query]"
                 }
             },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,//排除node_modules代码不编译
+                loader: 'babel-loader',
+            }
         ],
     },
 
     //插件
     plugins: [
         //plugin的配置
+        new ESlintWebpackPlugin({
+            context: path.resolve(__dirname, 'src')
+        })
     ],
     //模式
     mode: 'development'
