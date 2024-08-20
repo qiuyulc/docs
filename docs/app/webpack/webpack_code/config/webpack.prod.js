@@ -1,5 +1,25 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESlintWebpackPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+
+
+//用来获取处理样式的loader
+function getStyleLoader(pre) {
+    return [MiniCssExtractPlugin.loader, "css-loader",
+    {
+        loader: "postcss-loader",
+        options: {
+            postcssOptions: {
+                plugins: [
+                    "postcss-preset-env",//解决大部分样式兼容性问题
+                ]
+            }
+        }
+    },
+        pre].filter(Boolean)
+}
 
 module.exports = {
     //入口
@@ -8,7 +28,7 @@ module.exports = {
     output: {
         //文件的输出路径
         //__dirname nodejs的变量，代表当前文件的文件夹目录
-        path: path.resolve(__dirname, 'dist'),//相对路径
+        path: path.resolve(__dirname, '../dist'),//相对路径
         //文件名
         filename: 'static/js/main.js',
         //自动清空上次打包的内容
@@ -22,36 +42,22 @@ module.exports = {
                 // 用来匹配 .css 结尾的文件
                 test: /\.css$/,
                 // use 数组里面 Loader 执行顺序是从右到左
-                use: ["style-loader", "css-loader"],
+                use: getStyleLoader()
             },
             {
                 test: /\.less$/,
                 //loader 只能使用一个 loader
-                use: [
-                    // compiles Less to CSS
-                    'style-loader',
-                    'css-loader',
-                    'less-loader',
-                ],
+                use: getStyleLoader('less-loader')
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [
-                    // 将 JS 字符串生成为 style 节点
-                    'style-loader',
-                    // 将 CSS 转化成 CommonJS 模块
-                    'css-loader',
-                    // 将 Sass 编译成 CSS
-                    'sass-loader',
-                ],
+                use: getStyleLoader('sass-loader')
             },
             {
                 test: /\.styl$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "stylus-loader", // 将stylus编译成css文件
-                ],
+                use: getStyleLoader("stylus-loader")
+                , // 将stylus编译成css文件
+
             },
             {
                 test: /\.(png|jpe?g|gif|webp)$/,
@@ -90,8 +96,19 @@ module.exports = {
         //plugin的配置
         new ESlintWebpackPlugin({
             context: path.resolve(__dirname, 'src')
-        })
+        }),
+        new HtmlWebpackPlugin(
+            {
+                //模板：
+                template: path.resolve(__dirname, '../public/index.html')
+            }
+        ),
+        //提取css成单独文件
+        new MiniCssExtractPlugin({
+            filename: 'static/css/main.css'
+        }),
+        new CssMinimizerPlugin()
     ],
     //模式
-    mode: 'development'
+    mode: 'production'
 }
