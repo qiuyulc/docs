@@ -1,1 +1,2 @@
-!function(){"use strict";function o(o,n){return o-n}function n(...o){return o.reduce(((o,n)=>o+n),0)}console.log(o(2,1)),console.log(n(1,2,3,4));const c=o(2,1),e=n(1,2,3,4);console.log(c,e),console.log(111)}();
+!function(){"use strict";function o(o,n){return o-n}function n(...o){return o.reduce(((o,n)=>o+n),0)()}console.log(o(2,1)),console.log(n(1,2,3,4));const c=o(2,1),e=n(1,2,3,4);console.log(c,e),console.log(111)}();
+//# sourceMappingURL=main.js.map
