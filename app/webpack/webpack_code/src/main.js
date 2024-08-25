@@ -12,3 +12,17 @@ const result1 = count(2, 1);
 const result2 = sum(1, 2, 3, 4);
 console.log(result1, result2);
 console.log(111)
+console.log(module.hot)
+// 判断是否支持HMR功能
+if (module.hot) {
+    module.hot.accept('./js/count.js', function (count) {
+        console.log(count)//保存的是文件路径
+    }, (errorHandler) => {
+        console.log(errorHandler)
+    })
+    module.hot.accept('./js/sum.js', function (sum) {
+        console.log(sum)
+    }, (errorHandler) => {
+        console.log(errorHandler)
+    })
+}

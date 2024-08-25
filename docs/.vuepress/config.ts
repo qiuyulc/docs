@@ -124,6 +124,8 @@ export default defineUserConfig({
         "/webpack/18",
         "/webpack/19",
         "/webpack/20",
+        "/webpack/21",
+        "/webpack/22",
       ],
       "/design_patterns/": [
         "/design_patterns/01",
