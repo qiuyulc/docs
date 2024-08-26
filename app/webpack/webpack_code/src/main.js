@@ -1,4 +1,5 @@
 import count from './js/count.js';
+import { take } from './js/math.js'
 import sum from './js/sum.js';
 import './css/iconfont.css';
 import "./css/index.css";
@@ -10,6 +11,7 @@ console.log(count(2, 1));
 console.log(sum(1, 2, 3, 4));
 const result1 = count(2, 1);
 const result2 = sum(1, 2, 3, 4);
+console.log(take(1, 2), 1)
 console.log(result1, result2);
 console.log(111)
 console.log(module.hot)
