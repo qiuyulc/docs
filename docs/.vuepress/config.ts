@@ -3,7 +3,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 export default defineUserConfig({
   base: "/blog/",
   lang: "zh-CN",
-  title: "秋雨不良人",
+  title: "秋雨",
   description: "我与旧事归于尽，今年依旧花盛开。",
 
   theme: defaultTheme({
@@ -53,6 +53,10 @@ export default defineUserConfig({
       {
         text: "Promise",
         link: "/promise/1",
+      },
+      {
+        text:"Less",
+        link:"/less/1"
       },
       {
         text: "设计模式",
@@ -106,6 +110,7 @@ export default defineUserConfig({
         "/promise/1",
         "/promise/2",
       ],
+      "/less/":["/less/1",'/less/2'],
       "/webpack/":[
         "/webpack/1",
         "/webpack/2",
