@@ -106,12 +106,9 @@ export default defineUserConfig({
       },
     ],
     sidebar: {
-      "/promise/":[
-        "/promise/1",
-        "/promise/2",
-      ],
+      "/promise/": ["/promise/1", "/promise/2"],
       "/less/":["/less/1",'/less/2'],
-      "/webpack/":[
+      "/webpack/": [
         "/webpack/1",
         "/webpack/2",
         "/webpack/3",
@@ -124,6 +121,16 @@ export default defineUserConfig({
         "/webpack/10",
         "/webpack/11",
         "/webpack/12",
+        "/webpack/13",
+        "/webpack/14",
+        "/webpack/15",
+        "/webpack/16",
+        "/webpack/17",
+        "/webpack/18",
+        "/webpack/19",
+        "/webpack/20",
+        "/webpack/21",
+        "/webpack/22",
       ],
       "/design_patterns/": [
         "/design_patterns/01",
