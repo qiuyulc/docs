@@ -33,7 +33,11 @@ module.exports = {
         //__dirname nodejs的变量，代表当前文件的文件夹目录
         path: path.resolve(__dirname, '../dist'),//相对路径
         //文件名
-        filename: 'static/js/main.js',
+        filename: 'static/js/[name].js',
+        //给打包输出的其他文件命名
+        chunkFilename: 'static/js/[name].[contenthash:10].js',
+        //图片 字体通过type:asset处理，自动确定文件名
+        assetModuleFilename: 'static/media/[hash:10][ext][query]',
         //自动清空上次打包的内容
         //原理：在打包前，将path整个目录内容清空，在进行打包。
         clean: true,
@@ -60,8 +64,7 @@ module.exports = {
                     },
                     {
                         test: /\.styl$/,
-                        use: getStyleLoader("stylus-loader")
-                        , // 将stylus编译成css文件
+                        use: getStyleLoader("stylus-loader"), // 将stylus编译成css文件
 
                     },
                     {
@@ -77,7 +80,7 @@ module.exports = {
                         generator: {
                             //输出图片名称
                             //[hash:10] hash 取前10位
-                            filename: "static/images/[hash:10][ext][query]"
+                            // filename: "static/images/[hash:10][ext][query]"
                         }
                     },
                     {
@@ -85,7 +88,7 @@ module.exports = {
                         type: 'asset/resource',
                         generator: {
                             //输出名称
-                            filename: "static/media/[hash:10][ext][query]"
+                            // filename: "static/media/[hash:10][ext][query]"
                         }
                     },
                     {
@@ -136,7 +139,8 @@ module.exports = {
         ),
         //提取css成单独文件
         new MiniCssExtractPlugin({
-            filename: 'static/css/main.css'
+            filename: 'static/css/[name].css',
+            chunkFilename: 'static/css/[name].chunk.css'
         }),
         // css压缩
         // new CssMinimizerPlugin()
@@ -178,7 +182,10 @@ module.exports = {
                     },
                 },
             }),
-        ]
+        ],
+        splitChunks:{
+            chunks:'all'
+        }
     },
     //模式
     mode: 'production',

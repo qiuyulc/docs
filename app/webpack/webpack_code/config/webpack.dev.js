@@ -11,7 +11,11 @@ module.exports = {
         //文件的输出路径
         // 开发模式下不需要输出
         path: undefined,
-        filename: 'static/js/main.js',
+        filename: 'static/js/[name].js',
+        //给打包输出的其他文件命名
+        chunkFilename: 'static/js/[name].[contenthash:10].js',
+        //图片 字体通过type:asset处理，自动确定文件名
+        assetModuleFilename: 'static/media/[hash:10][ext][query]',
     },
     //加载器
     module: {
@@ -66,7 +70,7 @@ module.exports = {
                         generator: {
                             //输出图片名称
                             //[hash:10] hash 取前10位
-                            filename: "static/images/[hash:10][ext][query]"
+                            // filename: "static/images/[hash:10][ext][query]"
                         }
                     },
                     {
@@ -74,7 +78,7 @@ module.exports = {
                         type: 'asset/resource',
                         generator: {
                             //输出名称
-                            filename: "static/media/[hash:10][ext][query]"
+                            // filename: "static/media/[hash:10][ext][query]"
                         }
                     },
                     {

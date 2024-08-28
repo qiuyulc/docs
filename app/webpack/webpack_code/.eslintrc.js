@@ -10,5 +10,6 @@ module.exports = {
     },
     rules: {
         'no-var': 2
-    }
+    },
+    plugins:['import'],//解决动态导入语法报错
 }
