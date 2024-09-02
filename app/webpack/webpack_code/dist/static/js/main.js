@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkwebpack_code=self.webpackChunkwebpack_code||[]).push([[179],{523:function(o,n,e){function c(o,n){return o-n}function t(...o){return o.reduce(((o,n)=>o+n),0)}o=e.hmd(o),console.log(c(2,1)),console.log(t(1,2,3,4));const l=c(2,1),s=t(1,2,3,4);console.log(l,s),console.log(111),console.log(o.hot),document.getElementById("btn").onclick=function(){e.e(600).then(e.bind(e,587)).then((({take:o})=>{console.log(o(1,2))}))}}},function(o){var n;n=523,o(o.s=n)}]);
-//# sourceMappingURL=main.js.map

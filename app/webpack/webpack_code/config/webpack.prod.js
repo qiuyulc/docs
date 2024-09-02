@@ -7,7 +7,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const PreloadWebpackPlugin = require("@vue/preload-webpack-plugin");
-
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const threads = os.cpus().length;
 
 //用来获取处理样式的loader
@@ -38,7 +38,7 @@ module.exports = {
     //__dirname nodejs的变量，代表当前文件的文件夹目录
     path: path.resolve(__dirname, "../dist"), //相对路径
     //文件名
-    filename: "static/js/[name].js",
+    filename: "static/js/[name].[contenthash:10].js",
     //给打包输出的其他文件命名
     chunkFilename: "static/js/[name].[contenthash:10].js",
     //图片 字体通过type:asset处理，自动确定文件名
@@ -147,6 +147,12 @@ module.exports = {
     //   rel: "preload",
     //   as: "script",
       rel: "prefetch",
+    }),
+    new WorkboxPlugin.GenerateSW({
+      // 这些选项帮助快速启用 ServiceWorkers
+      // 不允许遗留任何“旧的” ServiceWorkers
+      clientsClaim: true,
+      skipWaiting: true,
     }),
     // css压缩
     // new CssMinimizerPlugin()

@@ -50,14 +50,14 @@ export default defineUserConfig({
       //   text: "实战",
       //   link: "/actual-combat/node/node-reptile",
       // },
-      {
-        text: "Promise",
-        link: "/promise/1",
-      },
-      {
-        text:"Less",
-        link:"/less/1"
-      },
+      // {
+      //   text: "Promise",
+      //   link: "/promise/1",
+      // },
+      // {
+      //   text:"Less",
+      //   link:"/less/1"
+      // },
       {
         text: "设计模式",
         link: "/design_patterns/01",
@@ -131,6 +131,8 @@ export default defineUserConfig({
         "/webpack/20",
         "/webpack/21",
         "/webpack/22",
+        "/webpack/23",
+        "/webpack/24",
       ],
       "/design_patterns/": [
         "/design_patterns/01",
