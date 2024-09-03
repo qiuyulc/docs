@@ -133,6 +133,7 @@ export default defineUserConfig({
         "/webpack/22",
         "/webpack/23",
         "/webpack/24",
+        "/webpack/25",
       ],
       "/design_patterns/": [
         "/design_patterns/01",
