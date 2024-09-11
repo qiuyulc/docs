@@ -26,6 +26,23 @@ module.exports = {
             // age:18,//"additionalProperties":false,不能新增字段
         }
       },
+      {
+        test: /\.js$/,
+        loader:'./loaders/babel-loader/index.js',
+        options:{
+            presets:['@babel/preset-env'],
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        loader:'./loaders/file-loader/index.js',
+        type:'javascript/auto',//组织webpack默认去处理图片资源，只使用file-loader
+      },
+      {
+        test: /\.css$/,
+        // use: ["style-loader", "css-loader"]
+        use:['./loaders/style-loader/index.js','css-loader']
+      }
     ],
   },
   plugins: [
