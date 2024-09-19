@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多段线</title>
+  </head>
+  <body>
+    <script>
+      /*
+      <polyline
+        points='x1,y1 x2,y2 x3,y3....' 多段线各个顶点的坐标
+        fill='none'  //多段线的填充颜色，使用'none' 表示不填充
+        stroke='stroke-color'//多段线的边框颜色
+        stroke-width='width'//多段线的边框宽度
+      />
+      */
+    </script>
+
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <polyline
+        points="50,50 100,150 150,100 200,200"
+        fill="none"
+        stroke="black"
+        stroke-width="2"
+      />
+    </svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <polyline points="20,20 40,25 60,40 80,120 120,140 200,180"
+      style="fill:none;stroke:black;stroke-width:3" />
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" style="fill:white;stroke:red;stroke-width:4" />
+    </svg>
+    
+  </body>
+</html>

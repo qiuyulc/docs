@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * SVG 意为可缩放矢量图形（Scalable Vector Graphics）。
+       * 是一种用于描述而为图形的XML标记语言，与位图图像不同，SVG图像以文本形式存储，并且可以缩放到任意大小而不会失真，
+       * 因为它们基于数学描述而不是像素。
+       * SVG图形是可伸缩的，无需分辨率依赖，这意味着它们可以在不失真的情况下被放大或缩小。
+       *
+       * 特点：
+       * 矢量图形：SVG使用基于路径的矢量图形，这意味着图形可以无限放大而不失真。
+       * 可伸缩性：SVG文件可以在不同的分辨率下保持清晰，适合用于响应式设计。
+       * 互动性：SVG可以与javascript结合，实现动画和交互效果/
+       * 集成性：SVG可以直接嵌入HTML5中，无需使用外部文件。
+       * 兼容性：大多数现代浏览器都支持SVG。
+       *
+       *
+       * 应用场景：
+       * 网页图标、数据可视化、动画、游戏开发、设计原型。
+       *
+       *
+       * 基本语法：
+       *
+       * svg文档由一个或多个SVG元素组成，它们定义了图形的内容和属性。
+       *
+       *
+       */
+    </script>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <script>
+        /**
+         * width和height属性定义了SVG画布的宽度和高度
+         * xmlns属性指定SVG文档的XML命名空间。
+         * 
+         * 
+         * 基本语法：
+         * SVG文档以 <svg> 标签开始，以 </svg> 标签结束。
+         * SVG元素使用标签来描述不同的图形，例如 <circle> 表示圆形，<rect> 表示矩形等。
+         * SVG元素可以包含属性，用于指定图形的各种特性，如位置、大小、颜色等
+         * 
+         * 基本图形：
+         * 
+         * <rect>：绘制矩形
+         * <circle>：绘制圆形
+         * <ellipse>：绘制椭圆
+         * <line>：绘制直线
+         * <polyline>：绘制折线
+         * <polygon>：绘制多边形
+         * <path>：绘制路径
+        */
+    </script>
+
+     <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <!-- <rect x="10" y="10" width="100" height="100" rx="10" ry="10" fill="blue"></rect> -->
+        <!-- <circle cx="100" cy="100" r="50" fill="red"></circle> -->
+        <!-- <ellipse cx="100" cy="100" rx="80" ry="50" fill="green"></ellipse> -->
+        <!-- <line x1="50" y1="50" x2="150" y2="150" stroke="black" stroke-width="2"></line>     -->
+        <!-- <polygon points="100,50 150,150 50,150" fill="orange"></polygon> -->
+        <!-- <polyline points="100,50 150,150 50,150" fill="none" stroke="blue" stroke-width="2"></polyline> -->
+        <!-- <path d="M10 10 L90 10 L90 90 Z" fill="none" stroke="black" stroke-width='2'></path> -->
+    </svg>
+    
+    <script>
+        /**
+         * 渐变和填充：
+         * 
+         * 使用<linearGradient> 或 <radialGradient>定义渐变。
+         * 使用fill和stroke属性置顶填充和描边样式。
+         * 
+         * 
+         * 文本和字体：
+         * 
+         * 使用<text>元素插入文本
+         * 使用font-family、font-size等属性控制文本样式。
+         * 
+         * 动画交互：
+         * 
+         * 使用css或javascript实现动画和交互效果。
+         * 添加事件处理器实现交互功能，如鼠标点击、悬停等。
+         * 
+         * svg元素属性：
+         * 
+         * <circle
+         *  cx='100' //圆心x坐标
+         *  cy='100' //圆心y坐标
+         *  r='50'   //圆的半径
+         *  fill='red' //填充颜色
+         *  stroke='black' //描变颜色
+         *  stroke-width='2' //描变宽度
+         *  />
+         * 
+         * 嵌套和分组
+         * 
+         * SVG元素可以嵌套和分组，以便更好地组织和管理图形元素
+         * 
+         * <g id='group1'>
+         *  <rect x='10' y='10' widht='50' height='50'></rect>
+         *  <circle cx='100' cy='100' r='30'>
+         * </g>
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+        */
+    </script>
+
+
+</body>
+</html>
