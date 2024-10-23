@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = new Array(1,2,3);
+        // console.log(arr);
+
+        // let arr2 = [3,4,5];
+        // console.log(arr2);
+
+        // for(let i = 0;i<arr.length;i++){
+        //     console.log(arr[i]);
+        // }
+
+
+        // push pop shift unshift splice
+
+        // arr.push(4);
+        // arr.pop();
+
+        // arr.shift();
+        // arr.unshift(10);
+
+        // arr.splice(0,2,100);
+
+        // sort
+        // let arr = [3,2,4,6,5];
+        // arr.sort((a,b)=>{
+        //     // return a-b;//正序
+        //     return b-a;//倒序
+        // })
+        // console.log(arr);
+
+        // let arr = [{
+        //     name:'kerwin',
+        //     age:100
+        // },{
+        //     name:'tiechui',
+        //     age:18,
+        // },{
+        //     name:'xiaoming',
+        //     age:20
+        // }]
+        // arr.sort((a,b)=>{
+        //     return a.age-b.age
+        // })
+
+        // //concat
+
+        // let arr1 = [1,2,3];
+        // let arr2 = [4,5,6];
+        // console.log(arr1.concat(arr2))
+
+        //迭代方法 every some filter map forEach reduce
+
+        // let arr = [10,11,12,13];
+        // let res=arr.every(item=>item>10);
+        // let res = arr.some(item=>item>10);
+        // let res = arr.filter(item=>item>10);
+        // let res = arr.map(item=>item*2);
+        // arr.forEach((item,index)=>{
+        //     console.log(item);
+        // })
+
+        // let res = arr.reduce((total,item)=>{
+        //     return total+item;
+        // },0)
+
+        // console.log(res);
+
+
+        //迭代器对象 
+        // console.log(arr);
+
+        // let ite = arr[Symbol.iterator]();
+        // //原型中有一个next方法 
+        // for(let i of arr){
+        //     console.log(i);
+        // }
+
+        // console.log(arr.entries())
+
+        // for(let i of arr.entries()){
+        //     console.log(i);
+        // }
+        // for(let i of arr.values()){
+        //     console.log(i);
+        // }
+
+        //Array.from()
+
+        // function test(){
+        //     console.log(arguments);
+        //     console.log(Array.from(arguments));
+        // }
+        // console.log(test(1,2,3))
+
+        // 搜索 indexOf lastIndexOf 
+        //find findIndex findLast findLastIndex
+        // includes
+
+        let arr = [10,11,12,13];
+
+        console.log(arr.includes(10));
+    </script>
+</body>
+</html>

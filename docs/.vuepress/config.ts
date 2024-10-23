@@ -62,6 +62,10 @@ export default defineUserConfig({
         text: "设计模式",
         link: "/design_patterns/01",
       },
+      // {
+      //   text: "算法",
+      //   link: "/algorithm/1",
+      // },
       {
         text: "webpack",
         link: "/webpack/1",
@@ -107,7 +111,8 @@ export default defineUserConfig({
     ],
     sidebar: {
       "/promise/": ["/promise/1", "/promise/2"],
-      "/less/":["/less/1",'/less/2'],
+      "/less/": ["/less/1", "/less/2"],
+      "/algorithm/":["/algorithm/1"],
       "/webpack/": [
         "/webpack/1",
         "/webpack/2",

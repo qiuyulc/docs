@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>栈结构</title>
+  </head>
+  <body>
+    <!-- <script>
+        //push //添加一个元素到栈顶
+        //pop //出栈
+        //peek 返回栈顶
+
+        //isEmpty
+        //clear
+        //size
+        //toString
+
+        class Stack{
+            // constructor(){
+            //     this.items = [];
+            // }
+            items = []
+
+            pop(){
+                return this.items.pop();
+            }
+
+            push(data){
+                this.items.push(data);
+            }
+
+            peek(){
+                return this.items[this.items.length - 1];
+            }
+
+            isEmpty(){
+                return this.items.length ===0;
+            }
+
+            size(){
+                return this.items.length;
+            }
+
+            clear(){
+                this.items = [];
+            }
+
+            toString(){
+                return this.items.join('_');
+            }
+        }
+
+        const stack = new Stack();
+    </script> -->
+
+    <script>
+        class Stack {
+          // constructor(){
+          //     this.items = [];
+          // }
+          // _items = []
+          #items = [];
+          pop() {
+            return this.#items.pop();
+          }
+
+          push(data) {
+            this.#items.push(data);
+          }
+
+          peek() {
+            return this.#items.at(-1);
+          }
+
+          isEmpty() {
+            return this.#items.length === 0;
+          }
+
+          size() {
+            return this.#items.length;
+          }
+
+          clear() {
+            this.#items = [];
+          }
+
+          toString() {
+            return this.#items.join("_");
+          }
+        }
+
+        const stack = new Stack();
+        // console.log(stack.#items);//没有办法直接访问 但是控制台可以正常访问
+    </script>
+  </body>
+</html>
