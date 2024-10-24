@@ -18,6 +18,19 @@ export default defineUserConfig({
         text: "首页",
         link: "/",
       },
+      {
+        text:'前端三剑客',
+        children:[
+          {
+            text:'HTML',
+            link:'/web/html/01'
+          },
+          {
+            text:'CSS',
+            link:'/web/css/01'
+          }
+        ]
+      },
 
       // {
       //   text: "前端基础",
@@ -113,6 +126,8 @@ export default defineUserConfig({
       "/promise/": ["/promise/1", "/promise/2"],
       "/less/": ["/less/1", "/less/2"],
       "/algorithm/":["/algorithm/1"],
+      "/web/html":['/web/html/01','/web/html/02'],
+      "/web/css":['/web/css/01'],
       "/webpack/": [
         "/webpack/1",
         "/webpack/2",
