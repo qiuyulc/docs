@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data-*</title>
+    <style>
+
+        #div{
+            width:100px;
+            height:50px;
+        }
+
+        #div::after{
+            content:attr(data-id)
+        }
+    </style>
+</head>
+<body>
+    <div id="div" dir="rtl" data-id="10px">你好</div>
+    <script>
+        const div = document.getElementById('div');
+        console.log(div.dataset.id);
+        console.log(div.getAttribute('data-id'));
+    </script>
+</body>
+</html>

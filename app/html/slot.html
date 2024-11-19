@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slot Example</title>
+<style>
+  .card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 定义一个自定义元素 -->
+<custom-card>
+  <h2 slot="title">Title Goes Here</h2>
+  <p slot="content">Content Goes Here</p>
+</custom-card>
+
+<!-- 自定义元素模板 -->
+<template id="custom-card-template">
+  <style>
+    .card {
+      background: #f9f9f9;
+    }
+  </style>
+  <div class="card">
+    <slot name="title"></slot>
+    <hr>
+    <slot name="content"></slot>
+  </div>
+</template>
+
+<script>
+  customElements.define('custom-card', class CustomCard extends HTMLElement {
+    constructor() {
+      super();
+      const template = document.getElementById('custom-card-template').content;
+      const shadowRoot = this.attachShadow({ mode: 'open' }).appendChild(template.cloneNode(true));
+    }
+  });
+</script>
+
+</body>
+</html>

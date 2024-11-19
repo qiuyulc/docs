@@ -126,7 +126,7 @@ export default defineUserConfig({
       "/promise/": ["/promise/1", "/promise/2"],
       "/less/": ["/less/1", "/less/2"],
       "/algorithm/":["/algorithm/1"],
-      "/web/html":['/web/html/01','/web/html/02'],
+      "/web/html":['/web/html/01','/web/html/02','/web/html/03','/web/html/04','/web/html/05','/web/html/06'],
       "/web/css":['/web/css/01'],
       "/webpack/": [
         "/webpack/1",
