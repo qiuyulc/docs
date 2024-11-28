@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .grid-container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr 3fr 1fr; /*定义整体分为几列*/
+        grid-template-rows: 50px 2fr 50px; /*定义分为几行每行占的大小*/
+        /* grid-column-gap: 10px; 定义每列的间隔 */
+        /* grid-row-gap: 10px; 定义每行的间隔 */
+      }
+      header {
+        background-color: aqua;
+        grid-column: 1 / 4; /*定义header占几列*/
+        /* grid-row:1 / 2; */
+      }
+
+      aside {
+        background-color: blue;
+      }
+
+      article{
+        background-color: antiquewhite;
+        grid-row: auto;
+      }
+      section {
+        background-color: yellow;
+      }
+      footer {
+        grid-column: 1 / 3;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>头部内容</header>
+      <aside>侧边内容</aside>
+      <section>主要展示区</section>
+      <article>右侧内容区</article>
+      <footer>底部内容</footer>
+    </div>
+  </body>
+</html>
