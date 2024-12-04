@@ -28,6 +28,10 @@ export default defineUserConfig({
           {
             text:'CSS',
             link:'/web/css/01'
+          },
+          {
+            text:'JavaScript',
+            link:'/web/js/01'
           }
         ]
       },
@@ -111,14 +115,22 @@ export default defineUserConfig({
       {
         text: "其他",
         children: [
+          // {
+          //   text: "pixi",
+          //   link: "/other/pixi/01",
+          // },
           {
-            text: "pixi",
-            link: "/other/pixi/01",
-          },
-          {
-            text: "app",
+            text: "App",
             link: "/app/01",
-          }
+          },
+          // {
+          //   text:'HTTP',
+          //   link:'/web/http/01'
+          // },
+          // {
+          //   text:'计算机网络',
+          //   link:'/network/01'
+          // }
         ],
       },
       {
@@ -132,6 +144,7 @@ export default defineUserConfig({
       "/algorithm/":["/algorithm/1"],
       "/web/html":['/web/html/01','/web/html/02','/web/html/03','/web/html/04','/web/html/05','/web/html/06'],
       "/web/css":['/web/css/01','/web/css/02','/web/css/03','/web/css/04','/web/css/05','/web/css/06'],
+      "/web/js":["/web/js/01"],
       "/webpack/": [
         "/webpack/1",
         "/webpack/2",
@@ -162,7 +175,9 @@ export default defineUserConfig({
         "/webpack/27",
         "/webpack/28",
       ],
-      "/app/":['/app/01'],
+      // "/network/":["/network/01"],
+      "/web/http":["/web/http/01"],
+      "/app/":['/app/01','/app/02'],
       "/design_patterns/": [
         "/design_patterns/01",
         "/design_patterns/02",
@@ -216,13 +231,13 @@ export default defineUserConfig({
         "/interview/react_router/basics",
       ],
       "/actual-combat/": ["/actual-combat/node/node-reptile"],
-      "/other/pixi": [
-        {
-          text: "pixi",
-          collapsible: true,
-          children: ["/other/pixi/01", "/other/pixi/02"],
-        },
-      ],
+      // "/other/pixi": [
+      //   {
+      //     text: "pixi",
+      //     collapsible: true,
+      //     children: ["/other/pixi/01", "/other/pixi/02"],
+      //   },
+      // ],
     },
   }),
   plugins: [
