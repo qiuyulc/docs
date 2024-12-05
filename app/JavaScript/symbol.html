@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+  <body>
+    <script>
+      // let id = Symbol('ids');
+      // alert(id.toString());
+      // console.log(id);
+      // alert(id.description)
+
+      // let user = {
+      //     name:'John'
+      // }
+
+      // let id = Symbol("id");
+      // user[id] = 1;
+      // console.log(user)
+
+      // const obj = Object.getOwnPropertySymbols(user)
+      // console.log(obj);
+
+      //   const asyncData = {
+      //     data: [1, 2, 3, 4],
+      //     [Symbol.asyncIterator]: async function* () {
+      //       for (let i = 0; i < this.data.length; i++) {
+      //         await new Promise((resolve) => setTimeout(()=>{
+      //             console.log('wait');
+      //             resolve();
+      //         }, 1000));
+
+      //         yield this.data[i];
+      //       }
+      //     },
+      //   };
+
+      //   (async function () {
+      //     for await (let item of asyncData) {
+      //       console.log(item);
+      //     }
+      //   })();
+
+      //   const obj = {
+      //     // 0: 1,
+      //     1: 2,
+      //     2: 3,
+      //     length:'12y',
+      //     [Symbol.isConcatSpreadable]: true,
+      //   };
+
+      //   const arr = ["x", "y"];
+      //   const result = arr.concat(obj);
+      //   console.log(result);
+
+      //   const obj = {
+      //     data: ["apple", "banana", "orange"],
+      //     [Symbol.iterator]: function () {
+      //       let index = 0;
+      //       return {
+      //         next: () => {
+      //             console.log(index)
+      //           if (index < this.data.length) {
+      //             return { value: this.data[index++], done: false };
+      //           } else {
+      //             return { value: undefined, done: true };
+      //           }
+      //         },
+      //       };
+      //     },
+      //   };
+
+      //   for (let item of obj) {
+      //     console.log(item);
+      //   }
+
+      const id = Symbol("id");
+      const obj = {
+        a: 1,
+        [id]: true,
+      };
+
+      const result = Reflect.ownKeys(obj);
+      console.log(result);
+
+      result.forEach(item=>{
+        console.log(obj[item]);
+      })
+    </script>
+  </body>
+</html>
