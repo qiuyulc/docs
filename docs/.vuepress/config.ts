@@ -144,7 +144,7 @@ export default defineUserConfig({
       "/algorithm/":["/algorithm/1"],
       "/web/html":['/web/html/01','/web/html/02','/web/html/03','/web/html/04','/web/html/05','/web/html/06'],
       "/web/css":['/web/css/01','/web/css/02','/web/css/03','/web/css/04','/web/css/05','/web/css/06'],
-      "/web/js":["/web/js/01",'/web/js/02'],
+      "/web/js":["/web/js/01",'/web/js/02','/web/js/03'],
       "/webpack/": [
         "/webpack/1",
         "/webpack/2",
