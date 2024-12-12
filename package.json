@@ -12,11 +12,12 @@
   "author": "Mrlishizhen",
   "license": "ISC",
   "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.19",
     "@vuepress/client": "2.0.0-rc.0",
-    "vue": "^3.4.3",
-    "vuepress": "2.0.0-rc.0"
-  },
-  "dependencies": {
-    "@vuepress/plugin-search": "2.0.0-rc.0"
+    "@vuepress/plugin-search": "2.0.0-rc.63",
+    "@vuepress/theme-default": "2.0.0-rc.65",
+    "sass": "^1.82.0",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.18"
   }
 }

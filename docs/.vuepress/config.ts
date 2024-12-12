@@ -1,11 +1,13 @@
-import { defineUserConfig, defaultTheme } from "vuepress";
+import { defineUserConfig} from "vuepress";
+import {defaultTheme} from '@vuepress/theme-default';
+import { viteBundler } from '@vuepress/bundler-vite'
 import { searchPlugin } from "@vuepress/plugin-search";
 export default defineUserConfig({
   base: "/blog/",
   lang: "zh-CN",
   title: "秋雨",
   description: "我与旧事归于尽，今年依旧花盛开。",
-
+  bundler: viteBundler(),
   theme: defaultTheme({
     lastUpdatedText: "最后更新",
     contributorsText: "贡献者",
