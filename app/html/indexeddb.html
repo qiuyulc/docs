@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 打开或创建数据库
+      var request = indexedDB.open("myDatabase", 1);
+
+      // 如果数据库版本变化或首次创建时触发
+      request.onupgradeneeded = function (event) {
+        var db = event.target.result;
+
+        // 创建对象存储（表），设置主键为 'id'
+        var objectStore = db.createObjectStore("customers", { keyPath: "id" });
+
+        // 为 'name' 字段创建索引
+        objectStore.createIndex("name", "name", { unique: false });
+      };
+
+      // 打开数据库成功
+      request.onsuccess = function (event) {
+        var db = event.target.result;
+
+        // 插入数据
+        var transaction = db.transaction(["customers"], "readwrite");
+        var objectStore = transaction.objectStore("customers");
+        objectStore.add({ id: 1, name: "John Doe", email: "john@example.com" });
+        objectStore.add({ id: 2, name: "Jane Doe", email: "jane@example.com" });
+
+        transaction.oncomplete = function () {
+          console.log("Transaction completed: data added.");
+        };
+
+        transaction.onerror = function (event) {
+          console.error("Transaction failed:", event);
+        };
+
+        // 查询数据
+        var queryTransaction = db.transaction(["customers"]);
+        var queryObjectStore = queryTransaction.objectStore("customers");
+        var query = queryObjectStore.get(1);
+
+        query.onsuccess = function (event) {
+          console.log("Customer:", event.target.result);
+        };
+
+        // 更新数据
+        var updateTransaction = db.transaction(["customers"], "readwrite");
+        var updateObjectStore = updateTransaction.objectStore("customers");
+        var updatedCustomer = {
+          id: 1,
+          name: "John Smith",
+          email: "johnsmith@example.com",
+        };
+
+        updateObjectStore.put(updatedCustomer);
+
+        updateTransaction.oncomplete = function () {
+          console.log("Transaction completed: data updated.");
+        };
+      };
+
+      // 错误处理
+      request.onerror = function (event) {
+        console.error("Database error:", event.target.error);
+      };
+    </script>
+  </body>
+</html>

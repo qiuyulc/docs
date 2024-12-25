@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop Example</title>
+<style>
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+<div id="draggable"></div>
+
+<script>
+const draggable = document.getElementById('draggable');
+let offsetX, offsetY;
+
+// 鼠标事件
+draggable.addEventListener('mousedown', onMouseDown);
+document.addEventListener('mousemove', onMouseMove);
+document.addEventListener('mouseup', onMouseUp);
+
+// 触摸事件
+// draggable.addEventListener('touchstart', onTouchStart);
+// document.addEventListener('touchmove', onTouchMove);
+// document.addEventListener('touchend', onTouchEnd);
+
+function onMouseDown(e) {
+  e.preventDefault();
+  offsetX = e.clientX - draggable.getBoundingClientRect().left;
+  offsetY = e.clientY - draggable.getBoundingClientRect().top;
+}
+
+function onMouseMove(e) {
+  if (offsetX && offsetY) {
+    draggable.style.left = e.clientX - offsetX + 'px';
+    draggable.style.top = e.clientY - offsetY + 'px';
+  }
+}
+
+function onMouseUp() {
+  offsetX = null;
+  offsetY = null;
+}
+
+function onTouchStart(e) {
+  e.preventDefault();
+  const touch = e.touches[0];
+  offsetX = touch.clientX - draggable.getBoundingClientRect().left;
+  offsetY = touch.clientY - draggable.getBoundingClientRect().top;
+}
+
+function onTouchMove(e) {
+  e.preventDefault();
+  if (offsetX && offsetY) {
+    const touch = e.touches[0];
+    draggable.style.left = touch.clientX - offsetX + 'px';
+    draggable.style.top = touch.clientY - offsetY + 'px';
+  }
+}
+
+function onTouchEnd() {
+  offsetX = null;
+  offsetY = null;
+}
+</script>
+</body>
+</html>

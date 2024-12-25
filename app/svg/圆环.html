@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Progress Ring</title>
+    <style>
+        .progress-ring {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .background-circle {
+            fill: none;
+            stroke: #e6e6e6;
+            stroke-width: 10;
+        }
+        .foreground-circle {
+            fill: none;
+            stroke: #3498db;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 60;
+            transition: stroke-dasharray 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <svg width="200" height="200" viewBox="0 0 36 36">
+            <circle class="background-circle" cx="18" cy="18" r="16"></circle>
+            <circle class="foreground-circle progress-ring" cx="18" cy="18" r="16"></circle>
+        </svg>
+    </div>
+
+    <script>
+        function setProgress(percent) {
+            const radius = 16;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percent / 100) * circumference;
+            const circle = document.querySelector('.foreground-circle');
+            circle.style.strokeDasharray = `${circumference}`;
+            circle.style.strokeDashoffset = offset;
+        }
+
+        // 设置进度为75%
+        setProgress(30);
+    </script>
+</body>
+</html>
